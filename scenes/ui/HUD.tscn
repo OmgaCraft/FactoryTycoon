@@ -5,50 +5,215 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1")
 
-[node name="Margin" type="MarginContainer" parent="."]
-offset_right = 420.0
-offset_bottom = 130.0
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+[node name="TopPanel" type="PanelContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 44.0
 
-[node name="VBox" type="VBoxContainer" parent="Margin"]
+[node name="TopBar" type="HBoxContainer" parent="TopPanel"]
 layout_mode = 2
+theme_override_constants/separation = 14
 
-[node name="BudgetLabel" type="Label" parent="Margin/VBox"]
+[node name="BudgetLabel" type="Label" parent="TopPanel/TopBar"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Budget : 0 $"
 
-[node name="HintLabel" type="Label" parent="Margin/VBox"]
+[node name="TimeLabel" type="Label" parent="TopPanel/TopBar"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "..."
-autowrap_mode = 2
+text = "Jour 1 - 08h00"
 
-[node name="Controls" type="HBoxContainer" parent="Margin/VBox"]
+[node name="Sep1" type="VSeparator" parent="TopPanel/TopBar"]
 layout_mode = 2
 
-[node name="PauseButton" type="Button" parent="Margin/VBox/Controls"]
+[node name="PauseButton" type="Button" parent="TopPanel/TopBar"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Pause"
 
-[node name="Speed1Button" type="Button" parent="Margin/VBox/Controls"]
+[node name="Speed1Button" type="Button" parent="TopPanel/TopBar"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "x1"
 
-[node name="Speed2Button" type="Button" parent="Margin/VBox/Controls"]
+[node name="Speed2Button" type="Button" parent="TopPanel/TopBar"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "x2"
 
-[node name="Speed3Button" type="Button" parent="Margin/VBox/Controls"]
+[node name="Speed3Button" type="Button" parent="TopPanel/TopBar"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "x3"
+
+[node name="Sep2" type="VSeparator" parent="TopPanel/TopBar"]
+layout_mode = 2
+
+[node name="ConstructButton" type="Button" parent="TopPanel/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Construire"
+
+[node name="PersonnelButton" type="Button" parent="TopPanel/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Personnel"
+
+[node name="ResearchToggleButton" type="Button" parent="TopPanel/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "R&D"
+
+[node name="BuildModeLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_top = 48.0
+offset_left = 8.0
+offset_right = 700.0
+offset_bottom = 66.0
+text = ""
+
+[node name="ConstructPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_top = 72.0
+offset_left = 8.0
+offset_right = 500.0
+offset_bottom = 230.0
+
+[node name="ConstructVBox" type="VBoxContainer" parent="ConstructPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ImportLabel" type="Label" parent="ConstructPanel/ConstructVBox"]
+layout_mode = 2
+text = "Matières premières"
+
+[node name="ImportRow" type="HBoxContainer" parent="ConstructPanel/ConstructVBox"]
+layout_mode = 2
+
+[node name="ImportIronButton" type="Button" parent="ConstructPanel/ConstructVBox/ImportRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Import Fer"
+
+[node name="ImportWoodButton" type="Button" parent="ConstructPanel/ConstructVBox/ImportRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Import Bois"
+
+[node name="MachineLabel" type="Label" parent="ConstructPanel/ConstructVBox"]
+layout_mode = 2
+text = "Machines"
+
+[node name="MachineRow" type="HBoxContainer" parent="ConstructPanel/ConstructVBox"]
+layout_mode = 2
+
+[node name="PressButton" type="Button" parent="ConstructPanel/ConstructVBox/MachineRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Presse"
+
+[node name="CarpentryButton" type="Button" parent="ConstructPanel/ConstructVBox/MachineRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Menuiserie"
+
+[node name="AssemblyGadgetButton" type="Button" parent="ConstructPanel/ConstructVBox/MachineRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Atelier Gadgets"
+
+[node name="AssemblyFurnitureButton" type="Button" parent="ConstructPanel/ConstructVBox/MachineRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Atelier Meubles"
+
+[node name="SaleLabel" type="Label" parent="ConstructPanel/ConstructVBox"]
+layout_mode = 2
+text = "Vente"
+
+[node name="SaleRow" type="HBoxContainer" parent="ConstructPanel/ConstructVBox"]
+layout_mode = 2
+
+[node name="ExportButton" type="Button" parent="ConstructPanel/ConstructVBox/SaleRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Export"
+
+[node name="PersonnelPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_top = 72.0
+offset_left = 8.0
+offset_right = 620.0
+offset_bottom = 400.0
+
+[node name="PersonnelVBox" type="VBoxContainer" parent="PersonnelPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HireLabel" type="Label" parent="PersonnelPanel/PersonnelVBox"]
+layout_mode = 2
+text = "Recruter :"
+
+[node name="HireRow" type="HBoxContainer" parent="PersonnelPanel/PersonnelVBox"]
+layout_mode = 2
+
+[node name="HireDebutantButton" type="Button" parent="PersonnelPanel/PersonnelVBox/HireRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Débutant"
+
+[node name="HireConfirmeButton" type="Button" parent="PersonnelPanel/PersonnelVBox/HireRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Confirmé"
+
+[node name="HireExpertButton" type="Button" parent="PersonnelPanel/PersonnelVBox/HireRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Expert"
+
+[node name="WorkerScroll" type="ScrollContainer" parent="PersonnelPanel/PersonnelVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 240)
+layout_mode = 2
+
+[node name="WorkerList" type="VBoxContainer" parent="PersonnelPanel/PersonnelVBox/WorkerScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+size_flags_horizontal = 3
+
+[node name="ResearchPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_top = 72.0
+offset_left = 8.0
+offset_right = 460.0
+offset_bottom = 200.0
+
+[node name="ResearchVBox" type="VBoxContainer" parent="ResearchPanel"]
+layout_mode = 2
+
+[node name="ResearchLabel" type="Label" parent="ResearchPanel/ResearchVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 2
+text = "..."
+
+[node name="ResearchProgressLabel" type="Label" parent="ResearchPanel/ResearchVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+
+[node name="StartResearchButton" type="Button" parent="ResearchPanel/ResearchVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lancer la recherche"
